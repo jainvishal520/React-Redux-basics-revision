@@ -18,18 +18,28 @@
                 age: 25
             }
 
-            handleClick = (e) => {
+            handleChange = (e) => {
                 this.setState({
-                    name: "Test",
-                    age:30
+                    name: e.target.value  
                 })
             }
+
+            handleSubmit= (e) => {
+                e.preventDefault();
+                console.log(this.state.name);
+                this.setState({
+                    name: ""
+                })
+            }
+
             render(){
                 return(
                     <div className="app-content">
                         Hello
                         <p>{`My name is ${this.state.name} and I'm ${this.state.age} years old.`} </p>
-                        <button onClick={this.handleClick}>Click me</button>  
+                        <form onSubmit={this.handleSubmit}> 
+                            <input type="text" onChange={this.handleChange}/>
+                        </form> 
                     </div>
                 )
             }
