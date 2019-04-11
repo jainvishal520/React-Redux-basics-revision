@@ -9,7 +9,7 @@ import React from 'react';
 
 //extract variables from props using destructuring directly
 // from parameter
-const Ninjas = ({ninjas}) => {
+const Ninjas = ({ninjas, deleteNinja}) => {
     
         //extract variables from props using destructuring
         // const {ninjas} = props;
@@ -19,6 +19,7 @@ const Ninjas = ({ninjas}) => {
                     <div>Name:  {ninja.name}</div>
                     <div>Age: {ninja.age}</div>
                     <div>Belt: {ninja.belt}</div>
+                    <button onClick={() => deleteNinja(ninja.id)}>delete</button>
                 </div>
             ) : null
         })

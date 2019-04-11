@@ -21,11 +21,27 @@ class App extends Component {
     })
   }
 
+  deleteNinja = (id) => {
+    const ninjas = this.state.ninjas.filter((ninja) => {
+      return ninja.id !== id
+    });
+    this.setState({ninjas})
+  }  
+
+  componentDidMount(){
+    console.log("mounted")
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    console.log("Upadted");
+    console.log(prevProps, prevState)
+  }
+
   render() {
     return (
       <div>
         <h1>hello</h1>
-        <Ninjas ninjas={this.state.ninjas} />
+        <Ninjas ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
         <AddNinja addNinja={this.addNinja}/>
       </div>
     );
