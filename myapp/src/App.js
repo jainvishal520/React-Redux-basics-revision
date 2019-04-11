@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Ninjas from './Ninjas';
 class App extends Component {
+
+  //We have a state here, so it is a class based component 
   state={
     ninjas: [
       {name:'Vishal', age:25, belt:'black',id:1},
