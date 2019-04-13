@@ -1,9 +1,6 @@
 import React from 'react';
-
+import Rainbow from './hoc/Rainbow';
 const About = (props) => {
-    setTimeout(() => {
-        props.history.push('/')
-    }, 2000)
     return(
         <div className="container">
             <h4 className="center">
@@ -16,4 +13,4 @@ const About = (props) => {
     )
 }
 
-export default About;
+export default Rainbow(About);
