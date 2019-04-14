@@ -10,7 +10,7 @@ class Home extends Component {
         axios.get('https://jsonplaceholder.typicode.com/posts')
         .then((res) => {
             this.setState({
-                posts : res.data
+                posts : res.data.slice(0,10)
             })
         })
     }
@@ -18,7 +18,7 @@ class Home extends Component {
     render(){
         return(
             this.state.posts.map((post) => (
-                <Posts post={post} />
+                <Posts post={post} key={post.id} />
                 )
             )
         )
