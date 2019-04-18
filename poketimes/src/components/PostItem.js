@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import { connect } from 'react-redux';
 
 class PostItem extends Component {
 
-    state = {
-        post: null
-    }
+    // state = {
+    //     post: null
+    // }
 
-    componentDidMount() {
-        const id = this.props.match.params.post_id;
-        console.log(id)
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-        .then((res) => {
-            this.setState({
-                post: res.data
-            })
-        })
+    // componentDidMount() {
+    //     const id = this.props.match.params.post_id;
+    //     console.log(id)
+    //     axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    //     .then((res) => {
+    //         this.setState({
+    //             post: res.data
+    //         })
+    //     })
         
-    }
+    // }
     render(){
         const post = this.state.post ? (
             <div className="container">
@@ -32,4 +33,4 @@ class PostItem extends Component {
     }
 }
 
-export default PostItem;
+export default connect()(PostItem);
