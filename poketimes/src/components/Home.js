@@ -27,7 +27,9 @@ class Home extends Component {
     
 }
 
+//state here gets the state from the store
 const mapStateToProps = (state) => {
+    // THis object represents the diff properties  we want to add to the props
     return {
         posts: state.posts
     }
